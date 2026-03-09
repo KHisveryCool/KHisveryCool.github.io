@@ -10,7 +10,7 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
 
-  <body>
+  <body class="is-preload">
 
     <div id="wrapper">
 
@@ -23,7 +23,6 @@
 
       <nav id="menu">
         <ul class="links">
-          <li><a href="oldwebsite.html">Old Version</a></li>
           <li><a href="#banner" class="scrolly">Home</a></li>
           <li><a href="#about" class="scrolly">About</a></li>
           <li><a href="#projects" class="scrolly">Projects</a></li>
@@ -65,7 +64,7 @@
               <img src="images/pic01.jpg" alt="About" />
             </span>
             <header class="major">
-              <h3><a href="#about" class="scrolly">About Me</a></h3>
+              <h3><a href="#about" class="link scrolly">About Me</a></h3>
               <p>Who I am + what I’m aiming for</p>
             </header>
           </article>
@@ -75,7 +74,7 @@
               <img src="images/pic02.jpg" alt="Projects" />
             </span>
             <header class="major">
-              <h3><a href="#projects" class="scrolly">Projects</a></h3>
+              <h3><a href="#projects" class="link scrolly">Projects</a></h3>
               <p>Work I’ve built in Python and Java</p>
             </header>
           </article>
@@ -85,7 +84,7 @@
               <img src="images/pic03.jpg" alt="Skills" />
             </span>
             <header class="major">
-              <h3><a href="#skills" class="scrolly">Skills</a></h3>
+              <h3><a href="#skills" class="link scrolly">Skills</a></h3>
               <p>Languages, tools, and interests</p>
             </header>
           </article>
@@ -95,7 +94,7 @@
               <img src="images/pic04.jpg" alt="Blog" />
             </span>
             <header class="major">
-              <h3><a href="#blog" class="scrolly">Blog & Notes</a></h3>
+              <h3><a href="#blog" class="link scrolly">Blog & Notes</a></h3>
               <p>Short explanations to reinforce learning</p>
             </header>
           </article>
@@ -105,7 +104,7 @@
               <img src="images/pic05.jpg" alt="Now" />
             </span>
             <header class="major">
-              <h3><a href="#now" class="scrolly">What I’m Doing Now</a></h3>
+              <h3><a href="#now" class="link scrolly">What I’m Doing Now</a></h3>
               <p>Current focus + learning goals</p>
             </header>
           </article>
@@ -115,7 +114,7 @@
               <img src="images/pic06.jpg" alt="Diary" />
             </span>
             <header class="major">
-              <h3><a href="#production-diary" class="scrolly">Production Diary</a></h3>
+              <h3><a href="#production-diary" class="link scrolly">Production Diary</a></h3>
               <p>Weekly progress + reflections</p>
             </header>
           </article>
@@ -141,79 +140,47 @@
           </div>
         </section>
 
-       <section id="projects">
+        <section id="projects">
           <div class="inner">
             <header class="major">
-              <h2>All Projects</h2>
+              <h2>Featured projects</h2>
             </header>
-        
-            <div class="row">
-        
-              <div class="col-12">
-                <h3>NPC Pathfinder Program</h3>
+
+            <div class="row gtr-200">
+              <div class="col-6 col-12-medium">
+                <h3>Project 1 – NPC Pathfinder Program</h3>
                 <p><strong>Summary:</strong> Uses BFS to guide the NPC from start to finish while avoiding obstacles.</p>
                 <p><strong>Tech stack:</strong> Python</p>
                 <p><strong>My contribution:</strong> Fully developed using lecture knowledge.</p>
+                <p>
+                  <strong>Challenge:</strong> Ensuring the NPC recognises obstacles and doesn’t walk through them.<br />
+                  <strong>Solution:</strong> A validation check before moving to a new cell. BFS only allows movement to
+                  cells within the grid and not marked as obstacles, so the NPC naturally avoids walls/rocks while finding
+                  the shortest path.
+                </p>
                 <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Python-Code/blob/main/NPC_Pathfinder.py" class="button">View Code</a></li>
+                  <li><a href="https://github.com/KHisveryCool/Python-Code/blob/main/NPC_Pathfinder.py" class="button">Source code</a></li>
+                  <li><a href="#" class="button">Live demo (soon)</a></li>
                 </ul>
-                <hr>
-              </div>
-        
-              <div class="col-12">
-                <h3>Password Generator</h3>
-                <p><strong>Summary:</strong> Java password generator built for assignment.</p>
-                <p><strong>Tech stack:</strong> Java</p>
-                <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Java-Projects/blob/main/PasswordGenerator.java" class="button">View Code</a></li>
-                </ul>
-                <hr>
-              </div>
-        
-              <div class="col-12">
-                <h3>Java OOP Exercises</h3>
-                <p>Collection of object-oriented programming tasks and practice work.</p>
-                <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Java-Projects" class="button">View Code</a></li>
-                </ul>
-                <hr>
-              </div>
-        
-              <div class="col-12">
-                <h3>Python Practice Programs</h3>
-                <p>Loops, algorithms, file handling and defensive programming exercises.</p>
-                <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Python-Code" class="button">View Code</a></li>
-                </ul>
-                <hr>
-              </div>
-        
-              <div class="col-12">
-                <h3>SQL & Database Practice</h3>
-                <p>Work using JOINs, GROUP BY, normalisation and database design.</p>
-                <ul class="actions">
-                  <li><a href="#" class="button">Coming soon</a></li>
-                </ul>
-                <hr>
-              </div>
-              <div class="col-12">
-                <h3>My First Portfolio Website</h3>
-                <p><strong>Summary:</strong> My first personal website built using only HTML. This project helped me understand website structure, sections, links, and deploying a site using GitHub Pages.</p>
-                <p><strong>Tech stack:</strong> HTML, GitHub Pages</p>
-                <p><strong>What I learned:</strong> How to structure a webpage, deploy a website online, and improve design over time.</p>
-              
-                <ul class="actions">
-                  <li><a href="oldwebsite.html" class="button">View Website</a></li>
-                </ul>
-                <hr>
               </div>
 
-        
+              <div class="col-6 col-12-medium">
+                <h3>Project 2 – Password Generator</h3>
+                <p><strong>Summary:</strong> A Java password generator built for an assignment.</p>
+                <p><strong>Tech stack:</strong> Java</p>
+                <p><strong>My contribution:</strong> Fully developed the program and wrote a report.</p>
+                <p>
+                  <strong>Challenge:</strong> The program wasn’t creating <code>passwords.txt</code> due to the wrong working directory.<br />
+                  <strong>Solution:</strong> Running the program from the correct directory fixed file output.
+                </p>
+                <ul class="actions">
+                  <li><a href="https://github.com/KHisveryCool/Java-Projects/blob/main/PasswordGenerator.java" class="button">Source code</a></li>
+                </ul>
+              </div>
             </div>
+
           </div>
         </section>
-
-
 
         <section id="skills">
           <div class="inner">
@@ -353,25 +320,25 @@
               <h2>Contact</h2>
             </header>
 
-            <form method="post" action="#">
-              <div class="fields">
-                <div class="field half">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" />
-                </div>
-                <div class="field half">
-                  <label for="email">Email</label>
-                  <input type="text" name="email" id="email" />
-                </div>
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" rows="6"></textarea>
-                </div>
+            <h2>Get in Touch</h2>
+            <form id="contact-form">
+              <div>
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Smith" />
               </div>
-              <ul class="actions">
-                <li><input type="submit" value="Send Message (static)" class="primary" /></li>
-                <li><input type="reset" value="Clear" /></li>
-              </ul>
+
+              <div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+              </div>
+
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Say hello..." rows="5"></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn">Send Message</button>
+              <p id="form-status"></p>
             </form>
           </section>
 
@@ -408,6 +375,11 @@
               </div>
             </section>
 
+            <section>
+              <div class="contact form">
+                
+              </div>
+            </section>
           </section>
         </div>
       </section>
@@ -434,9 +406,72 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+  // ── Supabase config ─────────────────────────────────────────────
+  // Replace these two values with YOUR project URL and anon key
+      const SUPABASE_URL  = "https://zdoicqwuuwudwzhtikfm.supabase.co";
+      const SUPABASE_ANON = "sb_publishable_A2WfSp2Mb-2w442C5KNpbA_Yfe5ts5j";
+    
+      // ── Form submission handler ──────────────────────────────────────
+      document.getElementById("contact-form")
+        .addEventListener("submit", async function (event) {
+    
+          // Prevent the default browser form submission (page reload)
+          event.preventDefault();
+    
+          // Grab the form values
+          const name    = document.getElementById("name").value.trim();
+          const email   = document.getElementById("email").value.trim();
+          const message = document.getElementById("message").value.trim();
+          const btn     = document.getElementById("submit-btn");
+          const status  = document.getElementById("form-status");
+    
+          // Disable the button while we send (prevents double-submit)
+          btn.disabled = true;
+          btn.textContent = "Sending...";
+          status.textContent = "";
+    
+          try {
+            // Call the Supabase REST API to insert a row
+            const response = await fetch(
+              `${SUPABASE_URL}/rest/v1/contact_messages`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "apikey":        SUPABASE_ANON,
+                  "Authorization": `Bearer ${SUPABASE_ANON}`,
+                  "Prefer":        "return=minimal"
+                },
+                body: JSON.stringify({ name, email, message })
+              }
+            );
+    
+            if (response.ok) {
+              // Success — show confirmation and reset the form
+              status.textContent = "✓ Message sent! I will be in touch soon.";
+              status.style.color = "#1A7A4A";
+              event.target.reset();
+            } else {
+              // Supabase returned an error — log it for debugging
+              const err = await response.json();
+              console.error("Supabase error:", err);
+              status.textContent = "Something went wrong. Please try again.";
+              status.style.color = "#DC2626";
+            }
+    
+          } catch (networkError) {
+            // Network/connectivity problem
+            console.error("Network error:", networkError);
+            status.textContent = "Could not connect. Check your internet connection.";
+            status.style.color = "#DC2626";
+          } finally {
+            // Always re-enable the button
+            btn.disabled = false;
+            btn.textContent = "Send Message";
+          }
+        });
+    </script>
 
   </body>
 </html>
-
-
-
