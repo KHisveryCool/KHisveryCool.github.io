@@ -146,38 +146,7 @@
               <h2>Featured projects</h2>
             </header>
 
-            <div class="row gtr-200">
-              <div class="col-6 col-12-medium">
-                <h3>Project 1 – NPC Pathfinder Program</h3>
-                <p><strong>Summary:</strong> Uses BFS to guide the NPC from start to finish while avoiding obstacles.</p>
-                <p><strong>Tech stack:</strong> Python</p>
-                <p><strong>My contribution:</strong> Fully developed using lecture knowledge.</p>
-                <p>
-                  <strong>Challenge:</strong> Ensuring the NPC recognises obstacles and doesn’t walk through them.<br />
-                  <strong>Solution:</strong> A validation check before moving to a new cell. BFS only allows movement to
-                  cells within the grid and not marked as obstacles, so the NPC naturally avoids walls/rocks while finding
-                  the shortest path.
-                </p>
-                <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Python-Code/blob/main/NPC_Pathfinder.py" class="button">Source code</a></li>
-                  <li><a href="#" class="button">Live demo (soon)</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-12-medium">
-                <h3>Project 2 – Password Generator</h3>
-                <p><strong>Summary:</strong> A Java password generator built for an assignment.</p>
-                <p><strong>Tech stack:</strong> Java</p>
-                <p><strong>My contribution:</strong> Fully developed the program and wrote a report.</p>
-                <p>
-                  <strong>Challenge:</strong> The program wasn’t creating <code>passwords.txt</code> due to the wrong working directory.<br />
-                  <strong>Solution:</strong> Running the program from the correct directory fixed file output.
-                </p>
-                <ul class="actions">
-                  <li><a href="https://github.com/KHisveryCool/Java-Projects/blob/main/PasswordGenerator.java" class="button">Source code</a></li>
-                </ul>
-              </div>
-            </div>
+            <div id="projects-grid" class="row gtr-200"></div>
 
           </div>
         </section>
@@ -472,6 +441,54 @@
           }
         });
     </script>
+    <script>
+    async function loadProjects() {
 
+      const container = document.getElementById("projects-grid");
+      if (!container) return;
+
+      try {
+
+        const response = await fetch(
+          `${SUPABASE_URL}/rest/v1/projects?select=*&order=created_at.desc`,
+          {
+            headers: {
+              "apikey": SUPABASE_ANON,
+              "Authorization": `Bearer ${SUPABASE_ANON}`
+            }
+          }
+        );
+
+        const projects = await response.json();
+
+        container.innerHTML = "";
+
+        projects.forEach(project => {
+
+          const card = document.createElement("div");
+          card.className = "col-6 col-12-medium";
+
+          card.innerHTML = `
+            <h3>${project.title}</h3>
+            <p><strong>Summary:</strong> ${project.description || ""}</p>
+            <p><strong>Tech stack:</strong> ${project.tech_stack || ""}</p>
+
+            <ul class="actions">
+              ${project.github_url ? `<li><a href="${project.github_url}" class="button">Source code</a></li>` : ""}
+              ${project.live_url ? `<li><a href="${project.live_url}" class="button">Live demo</a></li>` : ""}
+            </ul>
+          `;
+
+          container.appendChild(card);
+
+        });
+
+      } catch (error) {
+        console.error("Error loading projects:", error);
+      }
+    }
+
+    loadProjects();
+    </script>
   </body>
 </html>
